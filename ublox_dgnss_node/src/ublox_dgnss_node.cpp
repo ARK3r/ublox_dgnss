@@ -1251,6 +1251,12 @@ private:
           f->ubx_frame->msg_class,
           f->ubx_frame->msg_id);
         break;
+      case ubx::UBX_MON_COMMS:
+        RCLCPP_DEBUG(
+          get_logger(), "ubx class: 0x%02x id: 0x%02x mon comms poll sent to usb device",
+          f->ubx_frame->msg_class,
+          f->ubx_frame->msg_id);
+        break;
       default:
         RCLCPP_WARN(
           get_logger(), "ubx class: 0x%02x id: 0x%02x unknown ... doing nothing",
